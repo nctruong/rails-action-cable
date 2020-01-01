@@ -1,0 +1,14 @@
+development:
+  adapter: async	  adapter: redis
+  url: redis://localhost:6379
+
+test:
+  adapter: async
+
+staging:
+  adapter: redis
+  url: redis://bubuanh.itviec.com:6379
+
+production:
+  adapter: redis	  adapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
